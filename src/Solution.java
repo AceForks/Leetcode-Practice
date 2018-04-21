@@ -73,4 +73,41 @@ public class Solution {
         }
         return res;
     }
+
+    //for problem 4
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        int len1 = nums1.length;
+        int len2 = nums2.length;
+        int i = 0;
+        int head1 = 0, head2 = 0;
+        double a = 0, b = 0;
+        while(i <= (len1+len2)/2) {
+            double temp;
+            if(head1 >= len1) {
+                temp = 1.0*nums2[head2];
+                head2++;
+            } else if(head2 >= len2) {
+                temp = 1.0*nums1[head1];
+                head1++;
+            } else if(nums1[head1] < nums2[head2]) {
+                temp = 1.0*nums1[head1];
+                head1++;
+            } else {
+                temp = 1.0*nums2[head2];
+                head2++;
+            }
+            if(i == (len1+len2)/2) {
+                b = temp;
+            }
+            i++;
+            if(i == (len1+len2)/2) {
+                a = temp;
+            }
+        }
+        if((len1+len2)%2 == 0) {
+            return (a+b)/2;
+        } else {
+            return b;
+        }
+    }
 }
