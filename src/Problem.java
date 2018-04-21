@@ -21,6 +21,9 @@ public class Problem {
             case 2:
                 addTwoNumbers();
                 break;
+            case 3:
+                lengthOfLongestSubstring();
+                break;
             default:
                 break;
         }
@@ -61,5 +64,12 @@ public class Problem {
             System.out.print(((Integer) temp.val).toString()+" ");
             temp = temp.next;
         }
+    }
+
+    //for problem 3
+    private void lengthOfLongestSubstring() {
+        String s = scanner.nextLine();
+        int res = solution.lengthOfLongestSubstring(s);
+        System.out.print(res);
     }
 }

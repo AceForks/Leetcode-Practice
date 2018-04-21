@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Arrays;
+import java.util.Map;
+import java.util.HashMap;
 
 public class Solution {
     //for problem 1
@@ -37,6 +39,37 @@ public class Solution {
         }
         if(flag > 0) {
             temp.next = new ListNode(flag);
+        }
+        return res;
+    }
+
+    //for problem 3
+    public int lengthOfLongestSubstring(String s) {
+        if(s.equals("")) {
+            return 0;
+        }
+        Map<Character, Integer> charMap = new HashMap<Character, Integer>();
+        int start = 0;
+        int len = 0;
+        int res = 1;
+        char repeated = s.charAt(0);
+        for(int i = 0; i < s.length(); i++) {
+            char temp = s.charAt(i);
+            if(charMap.containsKey(temp)) {
+                if (charMap.get(temp) >= start) {
+                    if (len > res) {
+                        res = len;
+                    }
+                    start = (repeated == temp ? start + 1 : charMap.get(temp) + 1);
+                    repeated = s.charAt(start);
+                    len = i - start;
+                }
+            }
+            charMap.put(temp, i);
+            len++;
+        }
+        if(len > res) {
+            res = len;
         }
         return res;
     }
