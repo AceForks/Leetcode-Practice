@@ -24,6 +24,8 @@ public class Problem {
             case 3:
                 lengthOfLongestSubstring();
                 break;
+            case 5:
+                longestPalindrome();
             default:
                 break;
         }
@@ -70,6 +72,13 @@ public class Problem {
     private void lengthOfLongestSubstring() {
         String s = scanner.nextLine();
         int res = solution.lengthOfLongestSubstring(s);
+        System.out.print(res);
+    }
+
+    //for problem 5
+    private void longestPalindrome() {
+        String s = scanner.nextLine();
+        String res = solution.longestPalindrome(s);
         System.out.print(res);
     }
 }

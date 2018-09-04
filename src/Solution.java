@@ -110,4 +110,33 @@ public class Solution {
             return b;
         }
     }
+
+    //for problem 5
+    public String longestPalindrome(String s) {
+        int len = s.length();
+        if(len == 0)
+            return s;
+        boolean isPal[][] = new boolean[len+1][len+1];
+        for(int i = 0; i < len+1; i++)
+            isPal[i][i] = true;
+        for(int i = 0; i < len; i++)
+            isPal[i][i+1] = true;
+        for(int i = 0; i < len; i++) {
+            for(int j = 0; j < i; j++) {
+                if(s.charAt(j) == s.charAt(i))
+                    isPal[j][i+1] = isPal[j+1][i];
+            }
+        }
+        int temp = 1, l = 0, r = 1;
+        for(int i = 1; i < len+1; i++) {
+            for(int j = i-temp-1; j >= 0; j--) {
+                if(isPal[j][i]) {
+                    l = j;
+                    r = i;
+                    temp = r-l;
+                }
+            }
+        }
+        return s.substring(l, r);
+    }
 }
