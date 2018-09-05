@@ -26,6 +26,10 @@ public class Problem {
                 break;
             case 5:
                 longestPalindrome();
+                break;
+            case 7:
+                reverse();
+                break;
             default:
                 break;
         }
@@ -79,6 +83,13 @@ public class Problem {
     private void longestPalindrome() {
         String s = scanner.nextLine();
         String res = solution.longestPalindrome(s);
+        System.out.print(res);
+    }
+
+    //for problem 7
+    private void reverse() {
+        int x = scanner.nextInt();
+        int res = solution.reverse(x);
         System.out.print(res);
     }
 }

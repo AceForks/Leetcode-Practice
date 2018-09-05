@@ -161,4 +161,24 @@ public class Solution {
             ans = ans.concat(res[i]);
         return ans;
     }
+
+    //for problem 7
+    public int reverse(int x) {
+        if(x == 0)
+            return 0;
+        int sign = 1;
+        if(x < 0) {
+            sign = -1;
+            x = -x;
+        }
+        String s1 = ((Integer)x).toString();
+        String s2 = new String();
+        for(int i = s1.length(); i > 0; i--)
+            s2 = s2.concat(s1.substring(i-1, i));
+        try {
+            return Integer.parseInt(s2)*sign;
+        } catch(Exception e) {
+            return 0;
+        }
+    }
 }
