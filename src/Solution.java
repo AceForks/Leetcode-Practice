@@ -139,4 +139,26 @@ public class Solution {
         }
         return s.substring(l, r);
     }
+
+    //for problem 6
+    public String convert(String s, int numRows) {
+        if(numRows == 1)
+            return s;
+        int len = s.length();
+        int flag = 0;
+        int sign = 1;
+        String res[] = new String[numRows];
+        for(int i = 0; i < numRows; i++)
+            res[i] = new String();
+        for(int i = 0; i < len; i++) {
+            res[flag] = res[flag].concat(s.substring(i, i+1));
+            flag += sign;
+            if(flag == 0 || flag == numRows-1)
+                sign = -sign;
+        }
+        String ans = new String();
+        for(int i = 0; i < numRows; i++)
+            ans = ans.concat(res[i]);
+        return ans;
+    }
 }
