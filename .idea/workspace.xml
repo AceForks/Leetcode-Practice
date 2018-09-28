@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e2b4586-8f5f-430d-b80c-96d020d3e88a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Leetcode-Practice/Main.class" afterPath="$PROJECT_DIR$/out/production/Leetcode-Practice/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Leetcode-Practice/Problem.class" afterPath="$PROJECT_DIR$/out/production/Leetcode-Practice/Problem.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Leetcode-Practice/Solution.class" afterPath="$PROJECT_DIR$/out/production/Leetcode-Practice/Solution.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Problem.java" afterPath="$PROJECT_DIR$/src/Problem.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Solution.java" afterPath="$PROJECT_DIR$/src/Solution.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -45,8 +39,8 @@
       <file leaf-file-name="Solution.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Solution.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="683">
-              <caret line="212" column="5" lean-forward="true" selection-start-line="212" selection-start-column="5" selection-end-line="212" selection-end-column="5" />
+            <state relative-caret-position="563">
+              <caret line="222" column="22" lean-forward="true" selection-start-line="222" selection-start-column="22" selection-end-line="222" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1625#1645#0" expanded="true" />
@@ -557,8 +551,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Solution.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="683">
-          <caret line="212" column="5" lean-forward="true" selection-start-line="212" selection-start-column="5" selection-end-line="212" selection-end-column="5" />
+        <state relative-caret-position="563">
+          <caret line="222" column="22" lean-forward="true" selection-start-line="222" selection-start-column="22" selection-end-line="222" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1625#1645#0" expanded="true" />
