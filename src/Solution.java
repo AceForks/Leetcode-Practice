@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.regex.*;
+import java.util.Scanner;
 
 public class Solution {
     //for problem 1
@@ -180,5 +182,33 @@ public class Solution {
         } catch(Exception e) {
             return 0;
         }
+    }
+
+    //for problem 8
+    public int myAtoi(String str) {
+        if(str == null)
+            return 0;
+        int len = str.length(), p = 0;
+        double res = 0, sign = 1;
+        while(p < len && str.charAt(p) == ' ')
+            p++;
+        if(p >= len)
+            return 0;
+        if(str.charAt(p) == '+')
+            p++;
+        else if(str.charAt(p) == '-') {
+            sign = -1;
+            p++;
+        } else if(!Character.isDigit(str.charAt(p)))
+            return 0;
+        while(p < len && Character.isDigit(str.charAt(p))) {
+            res = res*10+(double)(str.charAt(p)-'0');
+            p++;
+        }
+        res *= sign;
+        if(sign == 1)
+            return (res > (double)Integer.MAX_VALUE)?Integer.MAX_VALUE:(int)res;
+        else
+            return (res < (double)Integer.MIN_VALUE)?Integer.MIN_VALUE:(int)res;
     }
 }

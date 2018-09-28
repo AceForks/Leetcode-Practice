@@ -30,6 +30,9 @@ public class Problem {
             case 7:
                 reverse();
                 break;
+            case 8:
+                myAtoi();
+                break;
             default:
                 break;
         }
@@ -90,6 +93,13 @@ public class Problem {
     private void reverse() {
         int x = scanner.nextInt();
         int res = solution.reverse(x);
+        System.out.print(res);
+    }
+
+    //for problem 8
+    private void myAtoi() {
+        String s = scanner.nextLine();
+        int res = solution.myAtoi(s);
         System.out.print(res);
     }
 }
