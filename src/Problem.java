@@ -33,6 +33,9 @@ public class Problem {
             case 8:
                 myAtoi();
                 break;
+            case 10:
+                isMatch();
+                break;
             default:
                 break;
         }
@@ -100,6 +103,14 @@ public class Problem {
     private void myAtoi() {
         String s = scanner.nextLine();
         int res = solution.myAtoi(s);
+        System.out.print(res);
+    }
+
+    //for problem 10
+    private void isMatch() {
+        String s = scanner.nextLine();
+        String p = scanner.nextLine();
+        boolean res = solution.isMatch(s, p);
         System.out.print(res);
     }
 }

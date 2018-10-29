@@ -230,4 +230,68 @@ public class Solution {
         }
         return true;
     }
+
+    //for problem 10
+    private boolean checkPos(char s, char p) {
+        if(p == '.' || s == p)
+            return true;
+        return false;
+    }
+
+    public boolean isMatch(String s, String p) {
+        if(s == null && p == null)
+            return true;
+        if(s != null && p == null)
+            return false;
+        if(s == null) {
+            if(p.length()%2 == 0) {
+                for(int i = 1; i < p.length(); i += 2) {
+                    if(p.charAt(i) != '*')
+                        return false;
+                }
+                return true;
+            }
+            return false;
+        }
+        int sLen = s.length(), pLen = p.length();
+        int sPos = 0, pPos = 0;
+        char nowCheck = '.';
+        while(sPos < sLen && pPos < pLen) {
+            if(p.charAt(pPos) == '*') {
+                if(pPos == 0)
+                    return false;
+                if(isMatch(s.substring(sPos, sLen), p.substring(pPos+1, pLen)))
+                    return true;
+                if(!checkPos(s.charAt(sPos), nowCheck))
+                    return false;
+                sPos++;
+            } else {
+                nowCheck = p.charAt(pPos);
+                if(pPos < pLen-1 && p.charAt(pPos+1) == '*')
+                    pPos++;
+                else {
+                    if(!checkPos(s.charAt(sPos), nowCheck))
+                        return false;
+                    sPos++;
+                    pPos++;
+                }
+            }
+        }
+        if(sPos < sLen)
+            return false;
+        if(pPos < pLen) {
+            if(p.charAt(pPos) == '*')
+                pPos++;
+            if(pPos == pLen-1 && p.charAt(pPos) != '*')
+                return false;
+            for(pPos += 1; pPos < pLen; pPos += 2) {
+                if(p.charAt(pPos) != '*')
+                    return false;
+            }
+            if(pPos == pLen && p.charAt(pLen-1) != '*')
+                return false;
+            return true;
+        }
+        return true;
+    }
 }
