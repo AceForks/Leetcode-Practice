@@ -289,7 +289,7 @@ public class Solution {
         return true;
     }
 
-    //for problem11
+    //for problem 11
     public int maxArea(int[] height) {
         int n = height.length;
         int l = 0, r = n-1;
@@ -300,7 +300,8 @@ public class Solution {
                 if(res < temp)
                     res = temp;
                 l++;
-            } else {
+            }
+            else {
                 temp = height[r]*(r-l);
                 if(res < temp)
                     res = temp;
@@ -310,7 +311,7 @@ public class Solution {
         return res;
     }
 
-    //for problem12
+    //for problem 12
     public String intToRoman(int num) {
         String[] src = new String[10];
         src[0] = "";
@@ -343,6 +344,62 @@ public class Solution {
         if(a[3] > 0) {
             temp = src[a[3]];
             res = temp.replace("I", "M")+res;
+        }
+        return res;
+    }
+
+    //for problem 13
+    public int romanToInt(String s) {
+        int l = s.length()-1;
+        int res = 0;
+        while(l >= 0) {
+            char c = s.charAt(l);
+            if(c == 'I') {
+                res += 1;
+            }
+            else if(c == 'V') {
+                res += 5;
+                if(l > 0 && s.charAt(l-1) == 'I') {
+                    res -= 1;
+                    l--;
+                }
+            }
+            else if(c == 'X') {
+                res += 10;
+                if(l > 0 && s.charAt(l-1) == 'I') {
+                    res -= 1;
+                    l--;
+                }
+            }
+            else if(c == 'L') {
+                res += 50;
+                if(l > 0 && s.charAt(l-1) == 'X') {
+                    res -= 10;
+                    l--;
+                }
+            }
+            else if(c == 'C') {
+                res += 100;
+                if(l > 0 && s.charAt(l-1) == 'X') {
+                    res -= 10;
+                    l--;
+                }
+            }
+            else if(c == 'D') {
+                res += 500;
+                if(l > 0 && s.charAt(l-1) == 'C') {
+                    res -= 100;
+                    l--;
+                }
+            }
+            else if(c == 'M') {
+                res += 1000;
+                if(l > 0 && s.charAt(l-1) == 'C') {
+                    res -= 100;
+                    l--;
+                }
+            }
+            l--;
         }
         return res;
     }
