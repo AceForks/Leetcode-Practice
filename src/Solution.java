@@ -309,4 +309,41 @@ public class Solution {
         }
         return res;
     }
+
+    //for problem12
+    public String intToRoman(int num) {
+        String[] src = new String[10];
+        src[0] = "";
+        for(int i = 1; i < 4; i++) {
+            src[i] = src[i-1]+"I";
+        }
+        src[4] = "IV";
+        src[5] = "V";
+        for(int i = 6; i < 9; i++) {
+            src[i] = src[i-1]+"I";
+        }
+        src[9] = "IX";
+
+        int[] a = new int[4];
+        for(int i = 0; i < 4; i++) {
+            a[i] = num%10;
+            num /= 10;
+        }
+
+        String res = "", temp = "";
+        res = src[a[0]]+res;
+        if(a[1] > 0) {
+            temp = src[a[1]];
+            res = temp.replace("X", "C").replace("V", "L").replace("I", "X")+res;
+        }
+        if(a[2] > 0) {
+            temp = src[a[2]];
+            res = temp.replace("X", "M").replace("V", "D").replace("I", "C")+res;
+        }
+        if(a[3] > 0) {
+            temp = src[a[3]];
+            res = temp.replace("I", "M")+res;
+        }
+        return res;
+    }
 }
