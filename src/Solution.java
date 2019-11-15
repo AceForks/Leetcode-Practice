@@ -1,11 +1,5 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
-import java.util.regex.*;
-import java.util.Scanner;
 
 public class Solution {
     //for problem 1
@@ -293,5 +287,26 @@ public class Solution {
             return true;
         }
         return true;
+    }
+
+    //for problem11
+    public int maxArea(int[] height) {
+        int n = height.length;
+        int l = 0, r = n-1;
+        int res = 0, temp = 0;
+        while(l < r) {
+            if(height[l] < height[r]) {
+                temp = height[l]*(r-l);
+                if(res < temp)
+                    res = temp;
+                l++;
+            } else {
+                temp = height[r]*(r-l);
+                if(res < temp)
+                    res = temp;
+                r--;
+            }
+        }
+        return res;
     }
 }
